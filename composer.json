@@ -1,0 +1,9 @@
+{
+    "name": "akdelf/fAK",
+    "description": "a PHP micro-framework",
+    "homepage": "https://github.com/akdelf/fAK",
+    "keywords": ["microframework"],
+    "autoload": {
+        "files": ["lib/fAK.php"]
+    }
+}
