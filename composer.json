@@ -2,8 +2,8 @@
     "name": "akdelf/fAK",
     "description": "a PHP micro-framework",
     "homepage": "https://github.com/akdelf/fAK",
-    "keywords": ["microframework"],
+    "keywords": ["microframework, php, dispatch"],
     "autoload": {
-        "files": ["lib/fAK.php"]
+        "files": ["lib/fak.php"]
     }
 }
