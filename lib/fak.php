@@ -206,7 +206,14 @@
 
 
 	spl_autoload_register(function ($class) {
-    	require SITEPATH.'app/models/'.$class.'.php';
+    	
+		$fclass = SITEPATH.'app/models/'.$class.'.php';
+		
+		if (file_exists($fclass))
+    		require $fclass;
+    	else
+    		error(500, 'not found class '.$class);
+
 	});
 
 
