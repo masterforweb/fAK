@@ -48,9 +48,7 @@
 	function er404($redirect = ''){
 		
 		header ('HTTP/1.0 404 Not Found');
-		
-		if ($redirect == '')
-			header('Location: '.$redirect);
+		header('Location: '.$redirect);
 		
 		exit;
 
