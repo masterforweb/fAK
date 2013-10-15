@@ -1,7 +1,5 @@
 <?php
 	
-	
-
 	/**
 	* главные настройки
 	*/
@@ -10,11 +8,11 @@
 		define('SITEPATH', $_SERVER['DOCUMENT_ROOT'].'/');
 
 	if (!defined('SITE'))
-		define('SITEPATH', $_SERVER['HTTP_HOST']);
+		define('SITE', 'http://'.$_SERVER['HTTP_HOST'].'/');
 
 	define('PATH_VIEW', SITEPATH.'app/views/');
 
-
+	
 	/*
 	* собираем настройки конфигов
 	*/
@@ -202,6 +200,7 @@
 		
 		ob_start();
 
+		
 		if ($layout == null && $layout = config('layout')){
 			if (!include PATH_VIEW.'layouts/'.$layout)
 				error(500, 'layout not found');
