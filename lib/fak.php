@@ -23,13 +23,14 @@
 
  		if ($value == null)
     		return (isset($_config[$key]) ? $_config[$key] : null);
+    		
   		else
     		return ($_config[$key] = $value);
 	
 	}
 
 
-
+	
 	/**
 	* возвращаем ошибку
 	*/
@@ -70,7 +71,8 @@
   		);
 		
 		 $method = strtoupper($method);
-		 
+
+
 		 if (!in_array($method, array_keys($maps)))
     		error(500, 'Only '.implode(', ', array_keys($maps)).' are supported');
 
@@ -120,7 +122,8 @@
 
 			}
 
-		}	
+		}
+
 
 		return;
 		
@@ -200,8 +203,10 @@
 		
 		ob_start();
 
-		
-		if ($layout == null && $layout = config('layout')){
+		if ($layout == null)
+			$layout = config('layout');
+
+		if ($layout !== null) {
 			if (!include PATH_VIEW.'layouts/'.$layout)
 				error(500, 'layout not found');
 		}	
